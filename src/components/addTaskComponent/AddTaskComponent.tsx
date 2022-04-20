@@ -11,19 +11,17 @@ const AddTaskComponent: FC<AddTaskProps> = ({ setToDo }) => {
   const [text, setText] = useState<string>("");
 
   const addNewTask = (): void => {
-    {
-      text.trim()
-        ? axios
-            .post("http://localhost:8000/createTask", {
-              text,
-              isCheck: false,
-            })
-            .then((res) => {
-              setToDo(res.data);
-              setText("");
-            })
-        : alert("Fill in the field");
-    }
+    text.trim()
+      ? axios
+          .post("http://localhost:8000/createTask", {
+            text,
+            isCheck: false,
+          })
+          .then((res) => {
+            setToDo(res.data);
+            setText("");
+          })
+      : alert("Fill in the field");
   };
 
   return (

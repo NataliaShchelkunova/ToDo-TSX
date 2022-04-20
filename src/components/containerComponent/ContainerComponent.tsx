@@ -20,10 +20,8 @@ const TaskContainerComponent: FC<UserListcomponentProps> = ({
         .sort((a, b) =>
           a.isCheck > b.isCheck ? 1 : a.isCheck < b.isCheck ? -1 : 0,
         )
-        .map((task, index: Number) => (
-          <div className="task-container" key={`task-${index}`}>
-            <TaskComponent task={task} setToDo={setToDo} setItem={setItem} />
-          </div>
+        .map((task: AllTasks, index: Number) => (
+          <TaskComponent task={task} setToDo={setToDo} setItem={setItem} />
         ))}
     </div>
   );

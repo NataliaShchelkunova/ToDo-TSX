@@ -21,7 +21,6 @@ const App = () => {
         <AddTaskComponent setToDo={setToDo} />
       </div>
       <ContainerComponent toDo={toDo} setToDo={setToDo} setItem={setItem} />
-      <div className="toDoList"></div>
     </div>
   );
 };

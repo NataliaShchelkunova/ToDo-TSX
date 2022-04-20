@@ -24,8 +24,8 @@ const TaskComponent: FC<TaskItemProps> = ({ task, setToDo, setItem }) => {
       });
   };
 
-  const deleteTask = (id: Number) => {
-    axios.delete(`http://localhost:8000/deleteTask?id=${id}`).then((resp) => {
+  const deleteTask = () => {
+    axios.delete(`http://localhost:8000/deleteTask?id=${_id}`).then((resp) => {
       setToDo(resp.data.data);
     });
   };
@@ -39,7 +39,7 @@ const TaskComponent: FC<TaskItemProps> = ({ task, setToDo, setItem }) => {
         onChange={() => onChangeCheckbox()}
       />
       <span className="text-input"> {text} </span>
-      <img src={deleteImg} alt="" onClick={() => deleteTask(_id)} />
+      <img src={deleteImg} alt="" onClick={() => deleteTask()} />
     </div>
   );
 };
